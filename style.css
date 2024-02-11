@@ -8,45 +8,264 @@
 html,body{
     width: 100%;
     height: 100%;
-}
-
-.nav{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    background-image: url("/Img/BGimg.jpg");
-}
-
-.netflix{
-    background-image: url("/Img/Netflix_Logo.png");
-    background-size: cover;
-    height: 80px;
-    width: 180px;
-    margin-right: 60%;
-    justify-content: flex-start;
-}
-
-.english{
-    display: flex;
-    justify-content: space-between;
-    align-items: center ;
-}
-
-.english select{
-    height: 32px;
-    width: 125px;
-    border-radius: 10px;
-}
-
-.english button{
-    height: 32px;
-    width: 75px;
-    margin-left: 20px;
-    background-color: red;
+    background: #000;
     color: white;
-    border-radius: 10px;
-    border: none;
 }
 
+.header{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,07)), url("./Img/BGimg.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 10px 8%;
+    position: relative;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.logo{
+    width: 150px;
+    cursor: pointer;
+}
+
+nav button{
+    border: 0;
+    outline: 0;
+    background: #db0001;
+    color: #fff;
+    padding: 7px 20px;
+    font-size: 12px;
+    border-radius: 4px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.lg-btn{
+    display: inline-flex;
+    align-items: center;
+    background: transparent;
+    border: 1px solid #fff;
+    padding: 7px 10px;
+}
+
+.lg-btn i{
+    margin-left: 3px;
+}
+
+.header-co{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.header-co h1{
+    font-size: 40px;
+    line-height: 70px;
+    font-weight: 600;
+    max-width: 750px;
+}
+
+.header-co h3{
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.email{
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.emaildiv input{
+    flex: 1;
+    width: 100%;
+    height: 50px;
+    border: none;
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    padding-left: 15px;
+}
+
+.emaildiv{
+    border: 0;
+    outline: 0;
+    margin-left: 20px;
+    border-radius: 4px;
+    width: 75.8%;
+}
+
+.emailbtn button{
+    background: #db0001;
+    border: 0;
+    outline: 0;
+    color: #fff;
+    font-size: 13px;
+    cursor: pointer;
+    padding: 15px 30px;
+    border-radius: 4px;
+    margin-left: 15px;
+}
+
+.emaildiv, .emailbtn{
+    gap: 50px;
+}
+
+.f1{
+    padding: 50px 12%;
+    font-size: 22px;
+    border-top: 10px solid rgb(66, 66, 66);
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 50px 0;
+}
+
+.text-col{
+    flex-basis: 50%;
+    margin-bottom: 20px;
+}
+
+.img-col{
+    flex-basis: 50%;
+    margin-bottom: 20px;
+}
+
+.img-col img{
+    position: relative;
+    display: block;
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+    z-index: 10;
+    
+}
+
+.v1{
+    position: absolute;
+    background-size: cover;
+    width: 380px;
+    height: 400px;
+    margin-left: 100px;
+    bottom: -500px;
+}
+
+.v2{
+    position: absolute;
+    width: 300px;
+    margin-left: 130px;
+    margin-top: 50px;
+    margin-bottom: -50px;
+}
+
+.faq{
+    padding: 10px 12%;
+    text-align: center;
+    font-size: 18px;
+}
+
+.faq h2{
+    font-size: 50px;
+    font-weight: 500;
+}
+
+.acc{
+    margin: 60px auto;
+    width: 100%;
+    max-width: 750px;
+    border-radius: 10px;
+}
+
+.acc li{
+    list-style: none;
+    width: 100%;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.acc li label{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    background: #303030;
+    margin-bottom: 10px;
+    cursor: pointer;
+    position: relative;
+    border-radius: 10px;
+}
+
+label::after{
+    content: '+';
+    font-size: 34px;
+    position: absolute;
+    right: 20px;
+    transition: transform 0.5s;
+}
+
+input[type="radio"]{
+    display: none;
+}
+
+.acc .cont{
+    background-color: #303030;
+    text-align: left;
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s, padding 1s;
+    border-radius: 10px;
+}
+
+.acc input[type="radio"]:checked + label + .cont{
+    max-height: 600px;
+    padding: 30px 20px;
+}
+
+.acc input[type="radio"]:checked + label::after{
+    transform:  rotate(135deg);
+}
+
+.emaildiv1 input{
+    display: flex;
+    width: 100%;
+    height: 50px;
+    border: none;
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    padding-left: 15px;
+    text-align: center;
+}
+
+.emaildiv1{
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    outline: 0;
+    margin-left: 60px;
+    border-radius: 4px;
+    width: 500px;
+}
+
+.lastemail{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
